@@ -34,7 +34,7 @@ namespace Registro_Detalle.BLL
             return paso;
         }
 
-        public static bool Modificar(Permisos permiso)
+        private static bool Modificar(Permisos permiso)
         {
             bool paso = false;
             Contexto contexto = new Contexto();

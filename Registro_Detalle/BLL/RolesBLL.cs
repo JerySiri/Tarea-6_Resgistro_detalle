@@ -12,15 +12,24 @@ namespace Registro_Detalle.BLL
 {
     class RolesBLL
     {
+
         public static bool Guardar(Roles rol)
         {
-            bool paso = false;
+
+            if (!Existe(rol.RolId))
+                return Insertar(rol);
+            else
+                return Modificar(rol);
+
+        }
+        private static bool Existe(int id)
+        {
             Contexto contexto = new Contexto();
+            bool encontrado = false;
 
             try
             {
-                if (contexto.Roles.Add(rol) != null)
-                    paso = contexto.SaveChanges() > 0;
+                encontrado = contexto.Roles.Any(e => e.RolId == id);
             }
             catch (Exception)
             {
@@ -31,6 +40,28 @@ namespace Registro_Detalle.BLL
                 contexto.Dispose();
             }
 
+            return encontrado;
+        }
+
+        private static bool Insertar(Roles rol)
+        {
+
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                contexto.Roles.Add(rol);
+                paso = contexto.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
             return paso;
         }
 

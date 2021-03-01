@@ -162,23 +162,33 @@ namespace Registro_Detalle.UI.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             Roles rol;
-            bool paso = false;
 
             if (!Validar())
                 return;
 
             rol = LlenarClase();
 
-            paso = RolesBLL.Guardar(rol);
+            var paso = RolesBLL.Guardar(rol);
 
-            if (!paso)
-                MessageBox.Show("No fue posible guardar o modificar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("Transaccione exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Transaccion fallida!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             if (RolesBLL.Eliminar((int)RolesIdNumericUpDown.Value))
+            {
                 Limpiar();
+                MessageBox.Show("Transaccione exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
                 MessageBox.Show("No pudo ser eliminado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
