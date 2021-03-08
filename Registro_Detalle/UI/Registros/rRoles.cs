@@ -22,6 +22,93 @@ namespace Registro_Detalle.UI.Registros
             this.RolDetalle = new List<RolesDetalle>();
         }
 
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Roles roles = RolesBLL.Buscar((int)RolesIdNumericUpDown.Value);
+
+            if (roles != null)
+            {
+                LlenarCampos(roles);
+                CargarGrid();
+            }
+            else
+                MessageBox.Show("Usuario No existe.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void AgregarButton_Click(object sender, EventArgs e)
+        {
+            if (RolesDetalleDataGridView.DataSource != null)
+                this.RolDetalle = (List<RolesDetalle>)RolesDetalleDataGridView.DataSource;
+
+            this.RolDetalle.Add(new RolesDetalle
+                (
+                    Id: 0,
+                    RolId: (int)RolesIdNumericUpDown.Value,
+                    PermisoId: (int)PermisosComboBox.SelectedIndex + 1,
+                    esAsignado: esAsignadoCheckBox.Checked
+                )
+            );
+
+            Permisos permiso = PermisosBLL.Buscar((int)PermisosComboBox.SelectedIndex + 1);
+            permiso.VecesAsignado = ++permiso.VecesAsignado;
+
+            if (!PermisosBLL.Guardar(permiso))
+                MessageBox.Show("Erro al cambian cantidad de veces asignada de permisos!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            CargarGrid();
+        }
+
+        private void RemoverButton_Click(object sender, EventArgs e)
+        {
+            if (RolesDetalleDataGridView.Rows.Count > 0 || RolesDetalleDataGridView.CurrentRow != null)
+            {
+                RolDetalle.RemoveAt(RolesDetalleDataGridView.CurrentRow.Index);
+
+                CargarGrid();
+            }
+        }
+
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            Roles rol;
+
+            if (!Validar())
+                return;
+
+            rol = LlenarClase();
+
+            var paso = RolesBLL.Guardar(rol);
+
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("Transaccione exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Transaccion fallida!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            if (RolesBLL.Eliminar((int)RolesIdNumericUpDown.Value))
+            {
+                Limpiar();
+                MessageBox.Show("Transaccione exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("No pudo ser eliminado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
         private void Limpiar()
         {
             RolesIdNumericUpDown.Value = 0;
@@ -105,91 +192,5 @@ namespace Registro_Detalle.UI.Registros
             PermisosComboBox.ValueMember = "PermisoId";
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
-        {
-            Roles roles = RolesBLL.Buscar((int)RolesIdNumericUpDown.Value);
-
-            if (roles != null)
-            {
-                LlenarCampos(roles);
-                CargarGrid();
-            }    
-            else
-                MessageBox.Show("Usuario No existe.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-        }
-
-        private void AgregarButton_Click(object sender, EventArgs e)
-        {
-            if (RolesDetalleDataGridView.DataSource != null)
-                this.RolDetalle = (List<RolesDetalle>)RolesDetalleDataGridView.DataSource;
-
-            this.RolDetalle.Add(new RolesDetalle
-                (
-                    Id: 0,
-                    RolId: (int)RolesIdNumericUpDown.Value,
-                    PermisoId: (int)PermisosComboBox.SelectedIndex + 1,
-                    esAsignado: esAsignadoCheckBox.Checked
-                )
-            );
-
-            Permisos permiso = PermisosBLL.Buscar((int)PermisosComboBox.SelectedIndex + 1);
-            permiso.VecesAsignado = ++permiso.VecesAsignado;
-
-            if(!PermisosBLL.Guardar(permiso))
-                MessageBox.Show("Erro al cambian cantidad de veces asignada de permisos!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
-            CargarGrid();
-        }
-
-        private void RemoverButton_Click(object sender, EventArgs e)
-        {
-            if (RolesDetalleDataGridView.Rows.Count > 0 || RolesDetalleDataGridView.CurrentRow != null)
-            {
-                RolDetalle.RemoveAt(RolesDetalleDataGridView.CurrentRow.Index);
-                
-                CargarGrid();
-            }
-        }
-
-        private void NuevoButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
-        private void GuardarButton_Click(object sender, EventArgs e)
-        {
-            Roles rol;
-
-            if (!Validar())
-                return;
-
-            rol = LlenarClase();
-
-            var paso = RolesBLL.Guardar(rol);
-
-            if (paso)
-            {
-                Limpiar();
-                MessageBox.Show("Transaccione exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Transaccion fallida!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-                
-        }
-
-        private void EliminarButton_Click(object sender, EventArgs e)
-        {
-            if (RolesBLL.Eliminar((int)RolesIdNumericUpDown.Value))
-            {
-                Limpiar();
-                MessageBox.Show("Transaccione exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                MessageBox.Show("No pudo ser eliminado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-        }
     }
 }
