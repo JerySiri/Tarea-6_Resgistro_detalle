@@ -44,7 +44,7 @@ namespace Registro_Detalle.UI.Registros
             Roles rol = new Roles();
             rol.RolId = (int)RolesIdNumericUpDown.Value;
             rol.Descripcion = DescripcionTextBox.Text;
-            rol.FechaCreacion = DateTime.Now;
+            rol.FechaCreacion = DateTime.Now.Date;
             rol.esActivo = esActivoCheckBox.Checked;
 
             rol.RolesDetalle = this.RolDetalle;
