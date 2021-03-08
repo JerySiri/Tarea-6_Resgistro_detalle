@@ -72,13 +72,13 @@ namespace Registro_Detalle.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"Delete FROM RolesDetalle Where Id = {rol.RolId}");
+                contexto.Database.ExecuteSqlRaw($"Delete FROM RolesDetalle Where RolId={rol.RolId}");
 
                 foreach (var anterior in rol.RolesDetalle)
                 {
                     contexto.Entry(anterior).State = EntityState.Added;
                 }
-                contexto.Entry(rol).State = EntityState.Added;
+                contexto.Entry(rol).State = EntityState.Modified;
                 paso = (contexto.SaveChanges() > 0);
             }
             catch (Exception)
