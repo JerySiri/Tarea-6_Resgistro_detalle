@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Registro_Detalle.UI;
 namespace Registro_Detalle
 {
     static class Program

@@ -35,10 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DATA\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="RegistroDetalle.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

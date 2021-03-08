@@ -1,5 +1,5 @@
 ﻿
-namespace Registro_Detalle
+namespace Registro_Detalle.UI
 {
     partial class MenuForm
     {

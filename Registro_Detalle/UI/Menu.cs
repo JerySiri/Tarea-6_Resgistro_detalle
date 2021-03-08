@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Registro_Detalle.UI.Registros;
 using Registro_Detalle.UI.Consulta;
-namespace Registro_Detalle
+
+namespace Registro_Detalle.UI
 {
     public partial class MenuForm : Form
     {
