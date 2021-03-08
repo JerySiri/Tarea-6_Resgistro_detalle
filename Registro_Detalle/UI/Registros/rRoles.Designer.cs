@@ -70,7 +70,7 @@ namespace Registro_Detalle.UI.Registros
             this.DescripcionLabel.Name = "DescripcionLabel";
             this.DescripcionLabel.Size = new System.Drawing.Size(69, 15);
             this.DescripcionLabel.TabIndex = 2;
-            this.DescripcionLabel.Text = "Descripcion";
+            this.DescripcionLabel.Text = "Descripción";
             // 
             // RolesIdNumericUpDown
             // 
