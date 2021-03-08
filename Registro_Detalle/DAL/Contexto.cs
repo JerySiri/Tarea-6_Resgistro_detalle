@@ -14,7 +14,7 @@ namespace Registro_Detalle.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source = RegistroDetalle.db");
+            optionsBuilder.UseSqlite(@"Data Source = DATA\RegistroDetalle.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

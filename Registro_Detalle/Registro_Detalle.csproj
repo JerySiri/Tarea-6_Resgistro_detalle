@@ -35,13 +35,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="RegistroDetalle.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="DATA\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DATA\" />
+    <None Update="DATA\RegistroDetalle.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
