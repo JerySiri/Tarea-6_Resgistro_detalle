@@ -72,7 +72,7 @@ namespace Registro_Detalle.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"Delete FROM RolesDetalle Where rolesId = {rol.RolId}");
+                contexto.Database.ExecuteSqlRaw($"Delete FROM RolesDetalle Where Id = {rol.RolId}");
 
                 foreach (var anterior in rol.RolesDetalle)
                 {
