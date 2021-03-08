@@ -11,7 +11,7 @@ namespace Registro_Detalle.DAL
         public DbSet<Permisos> Permisos { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<RolesDetalle> RolesDetalle { get; set; }
-
+        public DbSet<Usuarios> Usuarios { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"Data Source = DATA\RegistroDetalle.db");
