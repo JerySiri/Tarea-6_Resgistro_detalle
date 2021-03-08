@@ -36,6 +36,7 @@ namespace Registro_Detalle
             this.rRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cRolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +82,8 @@ namespace Registro_Detalle
             // 
             // ConsultaToolStripMenuItem
             // 
+            this.ConsultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cRolesToolStripMenuItem1});
             this.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem";
             this.ConsultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.ConsultaToolStripMenuItem.Text = "&Consulta";
@@ -90,6 +93,12 @@ namespace Registro_Detalle
             this.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem";
             this.AyudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.AyudaToolStripMenuItem.Text = "&Ayuda";
+            // 
+            // cRolesToolStripMenuItem1
+            // 
+            this.cRolesToolStripMenuItem1.Name = "cRolesToolStripMenuItem1";
+            this.cRolesToolStripMenuItem1.Size = new System.Drawing.Size(169, 22);
+            this.cRolesToolStripMenuItem1.Text = "&Consulta De Roles";
             // 
             // MenuForm
             // 
@@ -118,6 +127,7 @@ namespace Registro_Detalle
         private System.Windows.Forms.ToolStripMenuItem rRolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ConsultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AyudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cRolesToolStripMenuItem1;
     }
 }
 
