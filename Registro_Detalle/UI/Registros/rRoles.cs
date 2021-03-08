@@ -25,7 +25,6 @@ namespace Registro_Detalle.UI.Registros
         private void Limpiar()
         {
             RolesIdNumericUpDown.Value = 0;
-            FechaCreacionDateTimePicker.Value = DateTime.Now;
             DescripcionTextBox.Clear();
             esActivoCheckBox.Checked = false;
 
@@ -45,7 +44,7 @@ namespace Registro_Detalle.UI.Registros
             Roles rol = new Roles();
             rol.RolId = (int)RolesIdNumericUpDown.Value;
             rol.Descripcion = DescripcionTextBox.Text;
-            rol.FechaCreacion = FechaCreacionDateTimePicker.Value;
+            rol.FechaCreacion = DateTime.Now;
             rol.esActivo = esActivoCheckBox.Checked;
 
             rol.RolesDetalle = this.RolDetalle;
@@ -57,7 +56,6 @@ namespace Registro_Detalle.UI.Registros
         {
             RolesIdNumericUpDown.Value = rol.RolId;
             DescripcionTextBox.Text = rol.Descripcion;
-            FechaCreacionDateTimePicker.Value = rol.FechaCreacion;
             esActivoCheckBox.Checked = rol.esActivo;
 
             this.RolDetalle = rol.RolesDetalle;

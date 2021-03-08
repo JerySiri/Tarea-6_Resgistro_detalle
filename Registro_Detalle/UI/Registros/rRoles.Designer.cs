@@ -32,10 +32,8 @@ namespace Registro_Detalle.UI.Registros
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rRolesForm));
             this.RolesIdLabel = new System.Windows.Forms.Label();
-            this.FechaCreacionLabel = new System.Windows.Forms.Label();
             this.DescripcionLabel = new System.Windows.Forms.Label();
             this.RolesIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.FechaCreacionDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.esActivoCheckBox = new System.Windows.Forms.CheckBox();
             this.RolesDetalleGroupBox = new System.Windows.Forms.GroupBox();
@@ -65,19 +63,10 @@ namespace Registro_Detalle.UI.Registros
             this.RolesIdLabel.TabIndex = 0;
             this.RolesIdLabel.Text = "ID";
             // 
-            // FechaCreacionLabel
-            // 
-            this.FechaCreacionLabel.AutoSize = true;
-            this.FechaCreacionLabel.Location = new System.Drawing.Point(15, 59);
-            this.FechaCreacionLabel.Name = "FechaCreacionLabel";
-            this.FechaCreacionLabel.Size = new System.Drawing.Size(38, 15);
-            this.FechaCreacionLabel.TabIndex = 1;
-            this.FechaCreacionLabel.Text = "Fecha";
-            // 
             // DescripcionLabel
             // 
             this.DescripcionLabel.AutoSize = true;
-            this.DescripcionLabel.Location = new System.Drawing.Point(15, 95);
+            this.DescripcionLabel.Location = new System.Drawing.Point(15, 48);
             this.DescripcionLabel.Name = "DescripcionLabel";
             this.DescripcionLabel.Size = new System.Drawing.Size(69, 15);
             this.DescripcionLabel.TabIndex = 2;
@@ -85,30 +74,22 @@ namespace Registro_Detalle.UI.Registros
             // 
             // RolesIdNumericUpDown
             // 
-            this.RolesIdNumericUpDown.Location = new System.Drawing.Point(90, 15);
+            this.RolesIdNumericUpDown.Location = new System.Drawing.Point(90, 16);
             this.RolesIdNumericUpDown.Name = "RolesIdNumericUpDown";
-            this.RolesIdNumericUpDown.Size = new System.Drawing.Size(57, 23);
+            this.RolesIdNumericUpDown.Size = new System.Drawing.Size(112, 23);
             this.RolesIdNumericUpDown.TabIndex = 3;
-            // 
-            // FechaCreacionDateTimePicker
-            // 
-            this.FechaCreacionDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaCreacionDateTimePicker.Location = new System.Drawing.Point(90, 53);
-            this.FechaCreacionDateTimePicker.Name = "FechaCreacionDateTimePicker";
-            this.FechaCreacionDateTimePicker.Size = new System.Drawing.Size(200, 23);
-            this.FechaCreacionDateTimePicker.TabIndex = 4;
             // 
             // DescripcionTextBox
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(90, 92);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(90, 45);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(200, 23);
+            this.DescripcionTextBox.Size = new System.Drawing.Size(366, 23);
             this.DescripcionTextBox.TabIndex = 5;
             // 
             // esActivoCheckBox
             // 
             this.esActivoCheckBox.AutoSize = true;
-            this.esActivoCheckBox.Location = new System.Drawing.Point(230, 20);
+            this.esActivoCheckBox.Location = new System.Drawing.Point(398, 19);
             this.esActivoCheckBox.Name = "esActivoCheckBox";
             this.esActivoCheckBox.Size = new System.Drawing.Size(60, 19);
             this.esActivoCheckBox.TabIndex = 6;
@@ -123,9 +104,9 @@ namespace Registro_Detalle.UI.Registros
             this.RolesDetalleGroupBox.Controls.Add(this.esAsignadoCheckBox);
             this.RolesDetalleGroupBox.Controls.Add(this.PermisosComboBox);
             this.RolesDetalleGroupBox.Controls.Add(this.PermisosLabel);
-            this.RolesDetalleGroupBox.Location = new System.Drawing.Point(13, 131);
+            this.RolesDetalleGroupBox.Location = new System.Drawing.Point(13, 76);
             this.RolesDetalleGroupBox.Name = "RolesDetalleGroupBox";
-            this.RolesDetalleGroupBox.Size = new System.Drawing.Size(443, 265);
+            this.RolesDetalleGroupBox.Size = new System.Drawing.Size(443, 263);
             this.RolesDetalleGroupBox.TabIndex = 7;
             this.RolesDetalleGroupBox.TabStop = false;
             this.RolesDetalleGroupBox.Text = "Roles Detalle";
@@ -195,7 +176,7 @@ namespace Registro_Detalle.UI.Registros
             // BuscarButton
             // 
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(153, 15);
+            this.BuscarButton.Location = new System.Drawing.Point(208, 16);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(37, 23);
             this.BuscarButton.TabIndex = 8;
@@ -206,7 +187,7 @@ namespace Registro_Detalle.UI.Registros
             // 
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NuevoButton.Location = new System.Drawing.Point(97, 402);
+            this.NuevoButton.Location = new System.Drawing.Point(270, 345);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(75, 47);
             this.NuevoButton.TabIndex = 9;
@@ -219,7 +200,7 @@ namespace Registro_Detalle.UI.Registros
             // 
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.GuardarButton.Location = new System.Drawing.Point(196, 402);
+            this.GuardarButton.Location = new System.Drawing.Point(190, 345);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(75, 47);
             this.GuardarButton.TabIndex = 10;
@@ -232,7 +213,7 @@ namespace Registro_Detalle.UI.Registros
             // 
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EliminarButton.Location = new System.Drawing.Point(288, 402);
+            this.EliminarButton.Location = new System.Drawing.Point(110, 345);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(75, 47);
             this.EliminarButton.TabIndex = 11;
@@ -249,7 +230,7 @@ namespace Registro_Detalle.UI.Registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 463);
+            this.ClientSize = new System.Drawing.Size(468, 404);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
@@ -257,10 +238,8 @@ namespace Registro_Detalle.UI.Registros
             this.Controls.Add(this.RolesDetalleGroupBox);
             this.Controls.Add(this.esActivoCheckBox);
             this.Controls.Add(this.DescripcionTextBox);
-            this.Controls.Add(this.FechaCreacionDateTimePicker);
             this.Controls.Add(this.RolesIdNumericUpDown);
             this.Controls.Add(this.DescripcionLabel);
-            this.Controls.Add(this.FechaCreacionLabel);
             this.Controls.Add(this.RolesIdLabel);
             this.Name = "rRolesForm";
             this.Text = "Registros De Roles";
@@ -278,10 +257,8 @@ namespace Registro_Detalle.UI.Registros
         #endregion
 
         private System.Windows.Forms.Label RolesIdLabel;
-        private System.Windows.Forms.Label FechaCreacionLabel;
         private System.Windows.Forms.Label DescripcionLabel;
         private System.Windows.Forms.NumericUpDown RolesIdNumericUpDown;
-        private System.Windows.Forms.DateTimePicker FechaCreacionDateTimePicker;
         private System.Windows.Forms.TextBox DescripcionTextBox;
         private System.Windows.Forms.CheckBox esActivoCheckBox;
         private System.Windows.Forms.GroupBox RolesDetalleGroupBox;
