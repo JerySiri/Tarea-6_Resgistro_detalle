@@ -29,7 +29,22 @@ namespace Registro_Detalle.UI.Consulta
             {
                 switch (FiltroComboBox.SelectedIndex)
                 {
-                    case 0: //RolesId
+                    case 0://todos
+                        if (ActivosRadioButton.Checked == true)
+                        {
+                            lista = RolesBLL.GetList(r => r.esActivo == true);
+                        }
+                        else if (InactivosRadioButton.Checked == true)
+                        {
+                            lista = RolesBLL.GetList(r => r.esActivo == false);
+                        }
+                        else
+                        {
+                            lista = RolesBLL.GetList(lista => true);
+                        }
+                        break;
+
+                    case 1: //RolesId
                        
                         if (ActivosRadioButton.Checked == true)
                         {
@@ -44,7 +59,7 @@ namespace Registro_Detalle.UI.Consulta
                             lista = RolesBLL.GetList(r => r.RolId == Utilitarios.ToInt(CriterioTextBox.Text));
                         }                       
                         break;
-                    case 1://Descripcion
+                    case 2://Descripcion
                         if (ActivosRadioButton.Checked == true)
                         {
                             lista = RolesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text)  && r.esActivo == true);
@@ -104,6 +119,8 @@ namespace Registro_Detalle.UI.Consulta
 
             //selecciona desde el inicio el radioButton todos
             TodosRadioButton.Checked = true;
+
+            FiltroComboBox.SelectedIndex = 0;
         }
 
         private void UsarFiltroFechascheckBox_CheckedChanged(object sender, EventArgs e)

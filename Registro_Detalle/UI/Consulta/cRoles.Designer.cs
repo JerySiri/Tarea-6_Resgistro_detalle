@@ -74,6 +74,7 @@ namespace Registro_Detalle.UI.Consulta
             // 
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
+            "Todos",
             "Roles Id",
             "Descripción"});
             this.FiltroComboBox.Location = new System.Drawing.Point(51, 64);

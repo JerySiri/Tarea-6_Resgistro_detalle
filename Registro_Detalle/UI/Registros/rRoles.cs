@@ -161,13 +161,6 @@ namespace Registro_Detalle.UI.Registros
                 paso = false;
             }
 
-            if ( RolesIdNumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(RolesIdNumericUpDown, "No se puede guardar ningun campo con valor 0");
-                RolesIdNumericUpDown.Focus();
-                paso = false;
-            }
-
             if (PermisosBLL.ExisteDescripcion(DescripcionTextBox.Text, (int)RolesIdNumericUpDown.Value))
             {
                 MyErrorProvider.SetError(DescripcionTextBox, "El Campo Descripcion no puede estar vacio");
