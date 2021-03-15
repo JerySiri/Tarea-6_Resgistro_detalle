@@ -19,6 +19,8 @@ namespace Registro_Detalle.UI
             InitializeComponent();
             this.rRolesToolStripMenuItem.Click += new EventHandler(this.rRolesToolStripMenuItem_ItemClicked);
             this.cRolesToolStripMenuItem1.Click += new EventHandler(this.cRolesToolStripMenuItem_ItemClicked);
+            this.rUsuariosToolStripMenuItem.Click += new EventHandler(this.rUsuariosToolStripMenuItem_ItemClicked);
+            this.cUsuariosToolStripMenuItem.Click += new EventHandler(this.cUsuariosToolStripMenuItem_ItemClicked);
         }
 
         private void rRolesToolStripMenuItem_ItemClicked(object sender, EventArgs e)
@@ -35,9 +37,18 @@ namespace Registro_Detalle.UI
             cRoles.Show();
         }
 
-        private void MenuForm_Load(object sender, EventArgs e)
+        private void rUsuariosToolStripMenuItem_ItemClicked(object sender, EventArgs e)
         {
-
+            var rUsuario = new rUsuarioForm();
+            rUsuario.MdiParent = this;
+            rUsuario.Show();
         }
+        private void cUsuariosToolStripMenuItem_ItemClicked(object sender, EventArgs e)
+        {
+            var cUsuario = new cUsuariosForm();
+            cUsuario.MdiParent = this;
+            cUsuario.Show();
+        }
+
     }
 }

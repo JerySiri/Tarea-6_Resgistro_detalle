@@ -1,7 +1,7 @@
 ﻿
 namespace Registro_Detalle.UI.Consulta
 {
-    partial class cRolesForm
+    partial class cUsuariosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Registro_Detalle.UI.Consulta
             this.UsarFiltroFechascheckBox = new System.Windows.Forms.CheckBox();
             this.FiltroLabel = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
-            this.ConsultaRolesDataGridView = new System.Windows.Forms.DataGridView();
+            this.ConsultaUsuariosDataGridView = new System.Windows.Forms.DataGridView();
             this.ImprimirButton = new System.Windows.Forms.Button();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.EsActivoGroupBox = new System.Windows.Forms.GroupBox();
@@ -45,7 +45,7 @@ namespace Registro_Detalle.UI.Consulta
             this.HastaFechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.HastaLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.ConsultaRolesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaUsuariosDataGridView)).BeginInit();
             this.EsActivoGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,33 +74,35 @@ namespace Registro_Detalle.UI.Consulta
             // 
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
-            "Roles Id",
-            "Descripción"});
+            "Todos",
+            "Usuario Id",
+            "Alias",
+            "Nombre"});
             this.FiltroComboBox.Location = new System.Drawing.Point(51, 64);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(95, 23);
             this.FiltroComboBox.TabIndex = 2;
             // 
-            // ConsultaRolesDataGridView
+            // ConsultaUsuariosDataGridView
             // 
-            this.ConsultaRolesDataGridView.AllowUserToAddRows = false;
-            this.ConsultaRolesDataGridView.AllowUserToDeleteRows = false;
-            this.ConsultaRolesDataGridView.AllowUserToOrderColumns = true;
-            this.ConsultaRolesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ConsultaUsuariosDataGridView.AllowUserToAddRows = false;
+            this.ConsultaUsuariosDataGridView.AllowUserToDeleteRows = false;
+            this.ConsultaUsuariosDataGridView.AllowUserToOrderColumns = true;
+            this.ConsultaUsuariosDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ConsultaRolesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultaRolesDataGridView.Location = new System.Drawing.Point(12, 100);
-            this.ConsultaRolesDataGridView.Name = "ConsultaRolesDataGridView";
-            this.ConsultaRolesDataGridView.ReadOnly = true;
-            this.ConsultaRolesDataGridView.RowTemplate.Height = 25;
-            this.ConsultaRolesDataGridView.Size = new System.Drawing.Size(708, 161);
-            this.ConsultaRolesDataGridView.TabIndex = 3;
+            this.ConsultaUsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultaUsuariosDataGridView.Location = new System.Drawing.Point(12, 100);
+            this.ConsultaUsuariosDataGridView.Name = "ConsultaUsuariosDataGridView";
+            this.ConsultaUsuariosDataGridView.ReadOnly = true;
+            this.ConsultaUsuariosDataGridView.RowTemplate.Height = 25;
+            this.ConsultaUsuariosDataGridView.Size = new System.Drawing.Size(708, 194);
+            this.ConsultaUsuariosDataGridView.TabIndex = 3;
             // 
             // ImprimirButton
             // 
             this.ImprimirButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ImprimirButton.Location = new System.Drawing.Point(12, 266);
+            this.ImprimirButton.Location = new System.Drawing.Point(12, 299);
             this.ImprimirButton.Name = "ImprimirButton";
             this.ImprimirButton.Size = new System.Drawing.Size(75, 38);
             this.ImprimirButton.TabIndex = 4;
@@ -222,25 +224,25 @@ namespace Registro_Detalle.UI.Consulta
             this.panel1.Size = new System.Drawing.Size(328, 43);
             this.panel1.TabIndex = 12;
             // 
-            // cRolesForm
+            // cUsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 311);
+            this.ClientSize = new System.Drawing.Size(732, 344);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EsActivoGroupBox);
             this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.ImprimirButton);
-            this.Controls.Add(this.ConsultaRolesDataGridView);
+            this.Controls.Add(this.ConsultaUsuariosDataGridView);
             this.Controls.Add(this.FiltroComboBox);
             this.Controls.Add(this.FiltroLabel);
             this.Controls.Add(this.UsarFiltroFechascheckBox);
             this.MinimumSize = new System.Drawing.Size(748, 350);
-            this.Name = "cRolesForm";
-            this.Text = "Consulta De Roles";
-            this.Load += new System.EventHandler(this.cRolesForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ConsultaRolesDataGridView)).EndInit();
+            this.Name = "cUsuariosForm";
+            this.Text = "Consulta De Usuarios";
+            this.Load += new System.EventHandler(this.cUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaUsuariosDataGridView)).EndInit();
             this.EsActivoGroupBox.ResumeLayout(false);
             this.EsActivoGroupBox.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -255,7 +257,7 @@ namespace Registro_Detalle.UI.Consulta
         private System.Windows.Forms.CheckBox UsarFiltroFechascheckBox;
         private System.Windows.Forms.Label FiltroLabel;
         private System.Windows.Forms.ComboBox FiltroComboBox;
-        private System.Windows.Forms.DataGridView ConsultaRolesDataGridView;
+        private System.Windows.Forms.DataGridView ConsultaUsuariosDataGridView;
         private System.Windows.Forms.Button ImprimirButton;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.GroupBox EsActivoGroupBox;

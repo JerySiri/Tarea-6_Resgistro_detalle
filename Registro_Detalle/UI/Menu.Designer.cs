@@ -34,9 +34,11 @@ namespace Registro_Detalle.UI
             this.EditarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cRolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.AyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +71,8 @@ namespace Registro_Detalle.UI
             // RegistroToolStripMenuItem
             // 
             this.RegistroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rRolesToolStripMenuItem});
+            this.rRolesToolStripMenuItem,
+            this.rUsuariosToolStripMenuItem});
             this.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem";
             this.RegistroToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.RegistroToolStripMenuItem.Text = "&Registro";
@@ -77,16 +80,29 @@ namespace Registro_Detalle.UI
             // rRolesToolStripMenuItem
             // 
             this.rRolesToolStripMenuItem.Name = "rRolesToolStripMenuItem";
-            this.rRolesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.rRolesToolStripMenuItem.Text = "Registro de Roles";
+            this.rRolesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.rRolesToolStripMenuItem.Text = "&Registro de Roles";
+            // 
+            // rUsuariosToolStripMenuItem
+            // 
+            this.rUsuariosToolStripMenuItem.Name = "rUsuariosToolStripMenuItem";
+            this.rUsuariosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.rUsuariosToolStripMenuItem.Text = "&Registro De Usuarios";
             // 
             // ConsultaToolStripMenuItem
             // 
             this.ConsultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cRolesToolStripMenuItem1});
+            this.cRolesToolStripMenuItem1,
+            this.cUsuariosToolStripMenuItem});
             this.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem";
             this.ConsultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.ConsultaToolStripMenuItem.Text = "&Consulta";
+            // 
+            // cRolesToolStripMenuItem1
+            // 
+            this.cRolesToolStripMenuItem1.Name = "cRolesToolStripMenuItem1";
+            this.cRolesToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.cRolesToolStripMenuItem1.Text = "&Consulta De Roles";
             // 
             // AyudaToolStripMenuItem
             // 
@@ -94,11 +110,11 @@ namespace Registro_Detalle.UI
             this.AyudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.AyudaToolStripMenuItem.Text = "&Ayuda";
             // 
-            // cRolesToolStripMenuItem1
+            // cUsuariosToolStripMenuItem
             // 
-            this.cRolesToolStripMenuItem1.Name = "cRolesToolStripMenuItem1";
-            this.cRolesToolStripMenuItem1.Size = new System.Drawing.Size(169, 22);
-            this.cRolesToolStripMenuItem1.Text = "&Consulta De Roles";
+            this.cUsuariosToolStripMenuItem.Name = "cUsuariosToolStripMenuItem";
+            this.cUsuariosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.cUsuariosToolStripMenuItem.Text = "Consulta De Usuarios";
             // 
             // MenuForm
             // 
@@ -110,7 +126,6 @@ namespace Registro_Detalle.UI
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuForm";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.MenuForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -128,6 +143,8 @@ namespace Registro_Detalle.UI
         private System.Windows.Forms.ToolStripMenuItem ConsultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AyudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cRolesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem rUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cUsuariosToolStripMenuItem;
     }
 }
 

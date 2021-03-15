@@ -19,39 +19,105 @@ namespace Registro_Detalle.UI.Consulta
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cRolesForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void BuscarButton_Click(object sender, EventArgs e)
         {
 
             var lista = new List<Roles>();
-            
+
+
             if (!string.IsNullOrWhiteSpace(CriterioTextBox.Text))
             {
                 switch (FiltroComboBox.SelectedIndex)
                 {
                     case 0: //RolesId
-                        lista = RolesBLL.GetList(r => r.RolId == Utilitarios.ToInt(CriterioTextBox.Text));
+                       
+                        if (ActivosRadioButton.Checked == true)
+                        {
+                            lista = RolesBLL.GetList(r => r.RolId == Utilitarios.ToInt(CriterioTextBox.Text) && r.esActivo == true);
+                        }
+                        else if (InactivosRadioButton.Checked == true)
+                        {
+                            lista = RolesBLL.GetList(r => r.RolId == Utilitarios.ToInt(CriterioTextBox.Text) && r.esActivo == false );
+                        }
+                        else
+                        {
+                            lista = RolesBLL.GetList(r => r.RolId == Utilitarios.ToInt(CriterioTextBox.Text));
+                        }                       
                         break;
                     case 1://Descripcion
-                        lista = RolesBLL.GetList(r =>  r.Descripcion.Contains(CriterioTextBox.Text));
+                        if (ActivosRadioButton.Checked == true)
+                        {
+                            lista = RolesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text)  && r.esActivo == true);
+                        }
+                        else if (InactivosRadioButton.Checked == true)
+                        {
+                            lista = RolesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text) && r.esActivo == false);
+                        }
+                        else
+                        {
+                            lista = RolesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text));
+                        }
                         break;  
                 }
             }
             else
             {
-                lista = RolesBLL.GetList(r => true);
+                if (ActivosRadioButton.Checked == true)
+                {
+                    lista = RolesBLL.GetList(r => r.esActivo == true);
+                }
+                else if (InactivosRadioButton.Checked == true)
+                {
+                    lista = RolesBLL.GetList(r => r.esActivo == false);
+                }
+                else
+                {
+                    lista = RolesBLL.GetList(lista => true);
+                }
+
+                
             }
+
+            if(UsarFiltroFechascheckBox.Checked == true)
+            {
+                lista = lista.Where(c => c.FechaCreacion.Date >= DesdeDateTimePicker.Value.Date && c.FechaCreacion.Date <= HastaFechaDateTimePicker.Value.Date).ToList();
+            }
+
             ConsultaRolesDataGridView.DataSource = null;
             ConsultaRolesDataGridView.DataSource = lista;
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            var lista = new List<Roles>();
+            if(lista.Count == 0)
+            {
+                MessageBox.Show("No hay datos que imprimir.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cRolesForm_Load(object sender, EventArgs e)
+        {
+            // pone las fechas inactivas
+            DesdeDateTimePicker.Enabled = false;
+            HastaFechaDateTimePicker.Enabled = false;
+
+            //selecciona desde el inicio el radioButton todos
+            TodosRadioButton.Checked = true;
+        }
+
+        private void UsarFiltroFechascheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(UsarFiltroFechascheckBox.Checked == true)
+            {
+                DesdeDateTimePicker.Enabled = true;
+                HastaFechaDateTimePicker.Enabled = true;
+            }
+            if(UsarFiltroFechascheckBox.Checked == false)
+            {
+                DesdeDateTimePicker.Enabled = false;
+                HastaFechaDateTimePicker.Enabled = false;
+            }
         }
     }
 }

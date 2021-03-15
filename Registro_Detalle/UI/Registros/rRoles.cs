@@ -174,13 +174,6 @@ namespace Registro_Detalle.UI.Registros
                 DescripcionTextBox.Focus();
                 paso = false;
             }
-            
-            if (this.RolDetalle.Count == 0)
-            {
-                MyErrorProvider.SetError(RolesDetalleGroupBox, "Debes Agregar un telefono");
-                RolesDetalleGroupBox.Focus();
-                paso = false;
-            }
 
             return paso;
         }

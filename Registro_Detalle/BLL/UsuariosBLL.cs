@@ -140,7 +140,6 @@ namespace Registro_Detalle.BLL
 
             try
             {
-
                 Lista = contexto.Usuarios.Where(criterio).ToList();
             }
             catch (Exception)
@@ -179,7 +178,6 @@ namespace Registro_Detalle.BLL
         {
             Contexto contexto = new Contexto();
             bool encontrado = false;
-
             try
             {
                 encontrado = contexto.Usuarios.Any(e => e.Alias == alias);
@@ -205,6 +203,7 @@ namespace Registro_Detalle.BLL
             }
 
             return encontrado;
+
         }
     }
 }
