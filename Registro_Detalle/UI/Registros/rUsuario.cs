@@ -145,7 +145,7 @@ namespace Registro_Detalle.UI.Registros
             user.RolId = RolIdComboBox.SelectedIndex;
             user.Alias = AliasTextBox.Text;
             user.Nombre = NombreTextBox.Text;
-            user.Clave = ClaveTextBox.Text;
+            user.Clave = Utilitarios.GetSHA256(ClaveTextBox.Text);
             user.Activo = ActivoCheckBox.Checked;
             user.Email = EmailTextBox.Text;
             user.FechaIngreso = DateTime.Now.Date;

@@ -7,6 +7,7 @@ using Registro_Detalle.Entidades;
 using Registro_Detalle.DAL;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using System.Security.Cryptography;
 
 namespace Registro_Detalle.BLL
 {
@@ -204,6 +205,41 @@ namespace Registro_Detalle.BLL
 
             return encontrado;
 
+        }
+        public static bool Validar(string alias, string clave)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                paso = contexto.Usuarios
+                    .Any(u => u.Alias.Equals(alias)
+                                && u.Clave.Equals(GetSHA256(clave))
+                          );
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return paso;
+        }
+        
+        private static string GetSHA256(string str)
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = sha256.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
         }
     }
 }
